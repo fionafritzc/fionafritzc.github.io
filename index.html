@@ -2,17 +2,47 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Filter -->
+            <ul id="filter" class="filter">
+                <li><a data-filter="*" class="btn btn-filter" role="button" data-text="All">All</a></li>
+                <li><a data-filter=".design" class="btn btn-filter" role="button" data-text="Design">Design</a></li>
+                <li><a data-filter=".inspiration" class="btn btn-filter" role="button" data-text="Inspiration">Inspiration</a></li>
+                <li><a data-filter=".adventure" class="btn btn-filter" role="button" data-text="Adventure">Adventure</a></li>
+                <li><a data-filter=".photography" class="btn btn-filter" role="button" data-text="Photography">Photography</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Masonry -->
+    <section class="masonry">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+        {% for post in site.posts %}
+        <div class="item {{ post.category }}" data-category="{{ post.category }}">
+            <article class="post">
+                <figure class="figure square">
+                    <div class="img-trigger">
+                        <img src="{{ post.image }}" alt="img" />
+                    </div>
+                    <a href="{{ post.url }}" class="overlay-link"></a>
+                </figure>
+                <section class="post-content">
+                    <h4 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <h6 class="category">{{ post.category }}</h6>
+                    <p>{{ post.excerpt }}</p>
+                    <a href="{{ post.url }}"><span class="meta comments">Read More</span></a>
+                </section>
+            </article>
+        </div>
+        {% endfor %}
+    </section><!-- /.masonry -->
+    <!-- Pagination -->
+    <nav class="content-nav">
+        <ul class="pager">
+            <li class="disabled"><a href="page2.html">Older</a></li>
+            <li><a href="page2.html">Newer</a></li>
+        </ul>
+    </nav>
 </div>
