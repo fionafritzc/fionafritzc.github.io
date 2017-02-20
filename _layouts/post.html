@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-        <meta name="description" content="HTML5 Personal Blog Magazine Style Template">
+        <meta name="description" content="{{ site.description }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Your Name">
+        <meta name="author" content="{{ site.author }}">
 
         <!-- FONTS -->
         <link rel="stylesheet" href="/static/css/font-awesome.min.css">
@@ -45,15 +45,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Relatable Ink</a>
+                    <a class="navbar-brand" href="/">{{ site.name }}</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" role="menubar">
-                        <li role="menuitem"><a href="index.html">Home</a></li>
-                        <li role="menuitem"><a href="about.html">About Me</a></li>
-                        <li role="menuitem"><a href="contact.html">Contact</a></li>
-                        <li class="dropdown" role="menuitem">
+                        <li role="menuitem"><a href="/">Home</a></li>
+                        <li role="menuitem"><a href="/about">About Me</a></li>
+                        <li role="menuitem"><a href="/contact">Contact</a></li>
+                        <!--<li class="dropdown" role="menuitem">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li role="menuitem"><a href="post-leftsidebar.html">Left Sidebar</a></li>
@@ -63,7 +63,7 @@
                                 <li role="menuitem"><a href="comingsoon.html">Coming Soon</a></li>
                                 <li role="menuitem"><a href="shortcodes.html">Shortcodes</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
